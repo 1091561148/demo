@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: adminservice
+  boot:
+    admin:
+      url: http://localhost:${server.port}
+server:
+  port: 8899
+eureka:
+  instance:
+    hostname: myservice1
+  client:
+    service-url:
+      defaultZone: http://myservice2:1112/eureka/
+#    register-with-eureka: false
+#    fetch-registry: false
+
+# 方法一:对指完路由开启自定义敏感头
+# zuul.routes.feign-consumer.custom-sensitive-headers=true
+
+  # 方法二:将指定路由的敏感头设置为空
+  #zuul.routes.feign-consumer.sensitive-headers=

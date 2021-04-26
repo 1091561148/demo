@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: my-testService
+
+server:
+  port: 1111
+
+eureka:
+  instance:
+    hostname: myservice1
+  client:
+    service-url:
+      defaultZone: http://myservice2:1112/eureka/
+#    register-with-eureka: false
+#    fetch-registry: false

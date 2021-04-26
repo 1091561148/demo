@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mytestclient
+server:
+  port: 7070
+eureka:
+  client:
+    service-url:
+      defaultZone: http://myservice1:1111/eureka/,http://myservice2:1112/eureka/

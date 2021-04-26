@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: my-testService
+
+server:
+  port: 1112
+
+eureka:
+  instance:
+    hostname: myservice2
+  client:
+    service-url:
+      defaultZone: http://myservice1:1111/eureka/

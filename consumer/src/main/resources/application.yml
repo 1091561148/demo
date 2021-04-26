@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: ribbon-consumer
+
+server:
+  port: 9000
+
+eureka:
+  instance:
+    hostname: myservice1
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:1111/eureka/,http://${eureka.instance.hostname}:1112/eureka/

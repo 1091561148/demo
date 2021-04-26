@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>智慧酒店综合管理平台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="/image-files/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/image-files/favicon.ico" type="image/x-icon"/>
+    <link rel="bookmark" href="/image-files/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="css/global.css" media="all">
+    <link rel="stylesheet" href="css/index.css" media="all">
+    <link rel="stylesheet" href="css/vip.css" media="all">
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header header header-demo">
+        <div class="layui-main">
+            <div class="admin-login-box">
+                <img src="/image-files/logo.png" alt="" class="index-logo">
+                <span class="facego-title">智慧酒店综合管理平台</span>
+            </div>
+            <span class="setUp"></span>
+            <ul class="layui-nav admin-header-item">
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="admin-header-user">
+                        <span id="personSerial" data-id=""></span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a href="javascript:void(0);" class="logout">注销</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-side layui-bg-black" id="admin-side">
+        <div class="layui-side-scroll" id="admin-navbar-side" lay-filter="side"></div>
+    </div>
+    <div class="layui-body" id="admin-body">
+        <div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">
+                    <i class="fa fa-dashboard" aria-hidden="true"></i>
+                    <cite>首页</cite>
+                </li>
+            </ul>
+            <div class="layui-tab-content" style="padding: 0;">
+                <div class="layui-tab-item layui-show">
+                    <iframe src="main.html" name="facego"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-tree-mobile layui-hide">
+        <i class="layui-icon">&#xe602;</i>
+    </div>
+    <div class="site-mobile-shade"></div>
+
+</div>
+<!-- 拍照 -->
+<div id="photo" class="model-content">
+    <div class="">
+        <div class="collectionImg">
+            <video id="indexvideo" width="500" autoplay></video>
+            <canvas id="indexcanvas" style="display: none;"></canvas>
+        </div>
+        <div class="collectionBtn">
+            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" id="camera"><i
+                    class="layui-icon">&#xe65d;</i></button>
+            <input class="layui-upload-file" type="file" accept="undefined" name="file" multiple="">
+        </div>
+    </div>
+</div>
+</body>
+<div class="vipModel-cont" id="vipModelCont" style="display: none;">
+    <div class="vip-title">
+        <span>VIP 客户抵达</span>
+        <span class="vip-num">位</span>
+    </div>
+    <div class="vip-list-cont">
+        <div class="vip-list">
+            <!--<div class="vip-item">-->
+            <!--<div>-->
+            <!--<img src="../images/1.png" class="top-img">-->
+            <!--<div class="reg-img-cont">-->
+            <!--<img src="../images/2.png" class="width">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="bottom-cont">-->
+            <!--<div class="msg-cont">-->
+            <!--<div class="name-cont">-->
+            <!--<img src="../images/v1.png" class="level">-->
+            <!--<span class="name">笑哈哈</span>-->
+            <!--<span class="vipName">黄金会员</span>-->
+            <!--<span class="checkin">已入住</span>-->
+            <!--</div>-->
+            <!--<p>-->
+            <!--<span class="sex">男</span>-->
+            <!--<span class="age">28</span>-->
+            <!--<span class="birthday">1991-12-23</span>-->
+            <!--<span class="job">产品经理</span>-->
+            <!--</p>-->
+            <!--<p class="text">入住次数：1</p>-->
+            <!--<p class="text">最近入住：2</p>-->
+            <!--<p class="text">入住习惯：12312312<span class="reception">已接待</span></p>-->
+
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<div id="setUp" style="display: none;">
+    <div class="layui-input-inline layui-form">
+        <div id="setUpPosition">
+
+        </div>
+        <div id="positionNo">
+            <input type="checkbox" name="positionNo" lay-filter="positionNo" title="不接受任何vip提醒">
+        </div>
+    </div>
+</div>
+<audio id="sound" autoplay="autoplay"/>
+</html>
+<script type="text/javascript" src="plugins/layui/layui.js"></script>
+<script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+<!--<script type="text/javascript" src="./datas/nav.js"></script>-->
+<script type="text/javascript" src="./js/common.js"></script>
+<script type="text/javascript" src="./js/ajaxData.js"></script>
+<script type="text/javascript" src="./js/loginTimeout.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>

@@ -1,0 +1,22 @@
+server:
+  port: 7443
+  http.port: 7002
+
+spring:
+  application:
+    name: micro-svc-gateway
+
+zuul:
+  routes:
+    api-a:
+      serviceId: mytestclient
+      path: /client/**
+      stripPrefix: false
+  add-host-header: true
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5 # 定时刷新本地缓存时间
+    service-url:
+      defaultZone: http://myservice1:1111/eureka/,http://myservice2:1112/eureka/
+
+ 
